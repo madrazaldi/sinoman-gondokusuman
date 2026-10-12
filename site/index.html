@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id" data-theme="dark">
+<html lang="id" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,14 +17,14 @@
 <a class="skip" href="#main">Langsung ke isi</a>
 <header class="bar">
   <div class="wrap bar-in">
-    <a class="brand" href="./" aria-current="page"><span class="disc"><img src="assets/logo-mark.png" alt="" width="32" height="20"></span>Sinoman Gondokusuman</a>
+    <a class="brand" href="./" aria-current="page"><span class="disc"><img src="assets/logo-mark.png" alt="" width="36" height="23"></span>Sinoman Gondokusuman</a>
     <nav class="menu" aria-label="Navigasi utama">
       <a href="kampung.html">Kampung</a>
       <a href="program.html">Program</a>
       <a href="tentang.html">Tentang</a>
       <a href="kemitraan.html">Kemitraan</a>
     </nav>
-    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Mode terang">
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Mode gelap">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
     </button>
   </div>
@@ -34,6 +34,7 @@
 
 <section class="hero">
   <div class="wrap hero-in">
+    <div class="pole" aria-hidden="true"></div>
     <div class="hero-text">
       <h1>Sinoman <span>Gondokusuman</span></h1>
       <p class="lede">Dua puluh satu mahasiswa KKN-PPM UGM tinggal dan bekerja bersama warga Sapen, Purbonegaran, dan Resonegaran untuk mengembangkan kampung wisata di Gondokusuman, Yogyakarta.</p>
@@ -47,7 +48,17 @@
   </div>
 </section>
 
-<section class="band band-alt" aria-labelledby="sinoman-title">
+<section aria-labelledby="trio-title">
+  <div class="wrap">
+    <div class="trio-head">
+      <h2 id="trio-title">Tiga kampung, tiga arah</h2>
+      <p>Tiap kampung punya tema wisatanya sendiri dan tim tujuh orang yang tinggal di sana.</p>
+    </div>
+    <ul class="trio" id="trio"></ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="sinoman-title">
   <div class="wrap duo">
     <div>
       <h2 id="sinoman-title">Kenapa sinoman?</h2>
@@ -59,7 +70,7 @@
   </div>
 </section>
 
-<section class="band" aria-labelledby="invite-title">
+<section class="invite" aria-labelledby="invite-title">
   <div class="wrap invite-in">
     <div>
       <h2 id="invite-title">Mau ikut mendukung?</h2>

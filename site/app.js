@@ -14,7 +14,7 @@
   // ---------- Tema (gelap bawaan, pilihan disimpan) ----------
   const root = document.documentElement;
   const toggle = document.querySelector(".theme-toggle");
-  const syncToggle = () => toggle.setAttribute("aria-pressed", String(root.dataset.theme === "light"));
+  const syncToggle = () => toggle.setAttribute("aria-pressed", String(root.dataset.theme === "dark"));
   toggle.addEventListener("click", () => {
     root.dataset.theme = root.dataset.theme === "light" ? "dark" : "light";
     try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
@@ -76,6 +76,18 @@
         <span class="flag-count">${countFor(s)} program</span>
         <span class="flag-text"><b>${u.name}</b><span>${u.theme}</span></span>
       </a></li>`;
+    }).join("");
+
+    $("trio").innerHTML = ORDER.map((s) => {
+      const u = SUBUNITS[s];
+      return `<li data-s="${s}">
+        <h3><a href="kampung.html?kampung=${s}">${u.name}</a></h3>
+        <p class="trio-theme">${u.theme}</p>
+        <p class="trio-where">${u.kelurahan}</p>
+        <p class="trio-lead">${esc(u.lead)}</p>
+        <ul class="focus" aria-label="Fokus ${u.name}">${u.focus.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
+        <a class="more" href="kampung.html?kampung=${s}">Lihat ${countFor(s)} program di ${u.name}</a>
+      </li>`;
     }).join("");
 
     const first = TIMELINE[0];

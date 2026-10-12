@@ -21,7 +21,7 @@ Deployment is automatic: every push to `main` runs `.github/workflows/pages.yml`
 
 Five pages share one stylesheet and one script. The header and footer markup is repeated in every page, so a nav change has to be made in all five.
 
-- `site/index.html` (beranda): hero with the three kampung as hanging umbul-umbul banners, why "sinoman", a live linimasa status, and a partner invitation.
+- `site/index.html` (beranda): hero with the three kampung as hanging umbul-umbul banners, a three-column introduction to the kampung (theme, lead, focus), why "sinoman" with a live linimasa status on a nila band, and a partner invitation.
 - `site/kampung.html?kampung=<subunit>`: one kampung per view (defaults to Sapen), with its description, focus, team and programs (filterable by klaster).
 - `site/program.html`: explorer for all programs. Filters live in the URL (`?kampung=`, `?klaster=`, `?q=`) so a filtered view can be shared.
 - `site/tentang.html`: why sinoman, values, linimasa (`#linimasa`) and the full team (`#tim`).
@@ -34,11 +34,12 @@ Five pages share one stylesheet and one script. The header and footer markup is 
 
 ## Design rules in force
 
-- Dark by default. `<html data-theme="dark">`; the header toggle switches to light and stores the choice in `localStorage` (`theme`), applied by an inline script in each `<head>` before CSS loads.
-- Palette follows Yogyakarta batik: nila (indigo) ground, mori (unbleached cotton) text, soga (`--accent`) for links, focus and the banner pole. Subunit colours come from the logo.
-- One typeface, Archivo, loaded with its width axis. Names and headings use condensed widths (`font-stretch: 62%`/`75%`); reading text uses normal width.
-- The umbul-umbul banners on the beranda are the single decorative flourish (echoed by the notched kampung header). Keep the rest quiet: no cards, pills or decorative gradients.
-- The logo was drawn for a light ground; in the header it sits on a light disc. `site/assets/logo-mark.png` is derived from the original `logo-sinoman.png`:
+- Light by default. `<html data-theme="light">`; the header toggle switches to dark and stores the choice in `localStorage` (`theme`), applied by an inline script in each `<head>` before CSS loads. The toggle's `aria-pressed` is true when dark is on.
+- Palette follows Yogyakarta batik: mori (unbleached cotton) ground, nila (indigo) ink, soga (`--accent`) for links, focus and the banner pole. Subunit colours come from the logo.
+- Nila bands (`.band`) are the dark blocks on the page: the "Kenapa sinoman" section, the kemitraan contact block, the footer. They carry a kawung batik tile (`--kawung`, an inline SVG) at low opacity; the kampung header uses the same tile over the subunit colour. Text inside a band uses the `--band-*` tokens, so lists that can appear on a band need a `.band` override (see the end of `style.css`).
+- One typeface, Archivo, loaded with its width axis. Names and headings use condensed widths (`font-stretch: 62%`/`75%`); reading text uses normal width. Only the beranda hero and the kampung header use poster-size type; inner page titles stay around 4rem.
+- The umbul-umbul banners on the beranda hang from a pole that spans the full hero width; the kampung header echoes them with its notched bottom edge, and the footer's top edge is the three kampung colours in banner order. Keep the rest quiet: no cards, pills or decorative gradients. Subunit colour otherwise appears only as a thick top rule (kampung trio, team columns) or a solid strip on program group headers.
+- The logo was drawn for a light ground, so in the light theme it sits directly on the page; in the dark theme `.disc` gives it a light disc. `site/assets/logo-mark.png` is derived from the original `logo-sinoman.png`:
   `ffmpeg -i logo-sinoman.png -vf "crop=892:560:94:210,format=rgba,colorkey=0xFFFFFF:0.10:0.10" logo-mark.png`
 - Must stay usable at 375px width with no horizontal scroll, and must respect `prefers-reduced-motion` (only the beranda hero animates on load).
 
