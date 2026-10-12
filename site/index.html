@@ -1,614 +1,88 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sinoman Gondokusuman</title>
+<title>Sinoman Gondokusuman, KKN-PPM UGM 2026</title>
 <meta name="description" content="KKN-PPM UGM Periode 3 2026 (YO092) bersama warga Sapen, Purbonegaran, dan Resonegaran, Gondokusuman, Yogyakarta.">
 <link rel="icon" type="image/png" href="assets/logo-mark.png">
+<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-<style>
-:root {
-  --sogan: #3B2418;
-  --sogan-2: #4A2F20;
-  --tembaga: #9A5527;
-  --daun: #1F7A3A;
-  --sumba: #A8322B;
-  --pasir: #EEDFC8;
-  --pasir-2: #F7EFE3;
-  --ink: #2A1A12;
-  --muted: #6E5C50;
-  --line: #E4D6C4;
-  --page: #FFFFFF;
-
-  --sapen: var(--daun);
-  --purbonegaran: var(--sumba);
-  --resonegaran: var(--tembaga);
-
-  --wrap: 1160px;
-  --gutter: clamp(16px, 4vw, 40px);
-  --radius-sm: 6px;
-  --radius-lg: 14px;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-body {
-  margin: 0;
-  background: var(--page);
-  color: var(--ink);
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; }
-:focus-visible { outline: 3px solid var(--tembaga); outline-offset: 3px; border-radius: 4px; }
-
-.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
-
-h1, h2, h3 { line-height: 1.08; letter-spacing: -0.025em; margin: 0; }
-h2 { font-size: clamp(2rem, 4.4vw, 3.25rem); font-weight: 800; }
-h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
-p { margin: 0; }
-
-.section { padding: clamp(72px, 10vw, 128px) 0; }
-.section-head { display: grid; gap: 18px; max-width: 46rem; margin-bottom: clamp(36px, 5vw, 56px); }
-.section-head p { color: var(--muted); font-size: 1.1rem; }
-
-/* ---------------- Hero ---------------- */
-.hero {
-  position: relative;
-  background: var(--sogan);
-  color: var(--pasir);
-  overflow: hidden;
-}
-.kawung {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  color: var(--tembaga);
-  opacity: .5;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(100deg, transparent 15%, #000 70%);
-          mask-image: linear-gradient(100deg, transparent 15%, #000 70%);
-}
-.nav {
-  position: relative; z-index: 2;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  padding-top: 22px; padding-bottom: 22px;
-}
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
-.brand .disc { width: 44px; height: 44px; border-radius: 50%; background: var(--pasir); display: grid; place-items: center; flex: none; }
-.brand .disc img { width: 34px; }
-.nav ul { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
-.nav ul a {
-  display: block; padding: 8px 12px; border-radius: 999px;
-  text-decoration: none; font-size: .95rem; font-weight: 500; color: var(--pasir);
-}
-.nav ul a:hover { background: rgba(238, 223, 200, .12); }
-
-.hero-body {
-  position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 40px;
-  padding-top: clamp(32px, 6vw, 72px); padding-bottom: clamp(72px, 10vw, 120px);
-}
-.hero h1 {
-  font-size: clamp(3.4rem, 10.5vw, 8.6rem);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: .9;
-  color: #FFF8EE;
-}
-.hero h1 span { display: block; color: var(--pasir); font-weight: 700; font-size: .52em; letter-spacing: -0.035em; margin-top: .18em; }
-.hero-lede { margin-top: 32px; max-width: 34rem; font-size: clamp(1.08rem, 1.6vw, 1.25rem); color: #E8D6BD; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
-.hero-mark {
-  justify-self: end; width: min(100%, 440px); aspect-ratio: 1; border-radius: 50%;
-  background: var(--pasir); display: grid; place-items: center;
-  box-shadow: 0 0 0 10px rgba(238, 223, 200, .08), 0 0 0 22px rgba(238, 223, 200, .05);
-}
-.hero-mark img { width: 80%; }
-
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 14px 22px; border-radius: 999px; border: 2px solid transparent;
-  font: inherit; font-weight: 700; font-size: 1rem; text-decoration: none; cursor: pointer;
-}
-.btn-solid { background: var(--pasir); color: var(--sogan); }
-.btn-solid:hover { background: #FFF8EE; }
-.btn-ghost { border-color: rgba(238, 223, 200, .55); color: var(--pasir); }
-.btn-ghost:hover { border-color: var(--pasir); }
-
-.hero-foot {
-  position: relative; z-index: 1;
-  border-top: 1px solid rgba(238, 223, 200, .18);
-}
-.hero-foot .wrap { display: flex; flex-wrap: wrap; gap: 8px 40px; padding-top: 20px; padding-bottom: 22px; font-size: .95rem; color: #D6C1A4; }
-.hero-foot strong { color: var(--pasir); font-weight: 700; }
-
-@media (prefers-reduced-motion: no-preference) {
-  .kawung { animation: kawung-in 1.6s ease-out both; }
-  .hero h1, .hero-lede, .hero-actions { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
-  .hero-lede { animation-delay: .12s; }
-  .hero-actions { animation-delay: .22s; }
-  .hero-mark { animation: rise 1.1s .15s cubic-bezier(.2,.7,.2,1) both; }
-}
-@keyframes kawung-in { from { opacity: 0; } to { opacity: .5; } }
-@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-
-/* ---------------- Sinoman ---------------- */
-.sinoman { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 96px); align-items: start; }
-.sinoman blockquote {
-  margin: 0;
-  font-size: clamp(1.45rem, 2.6vw, 2rem); line-height: 1.32; font-weight: 600; letter-spacing: -0.015em;
-}
-.sinoman blockquote em { font-style: normal; color: var(--tembaga); }
-.sinoman .note { margin-top: 24px; color: var(--muted); max-width: 36rem; }
-.values { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
-.values li { display: grid; grid-template-columns: 11rem 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-.values b { font-weight: 700; font-size: 1.08rem; }
-.values span { color: var(--muted); }
-
-/* ---------------- Kampung ---------------- */
-.kampung-section { background: var(--pasir-2); }
-.kampung { display: grid; gap: 0; }
-.kampung article {
-  --c: var(--tembaga);
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(24px, 5vw, 72px);
-  padding: clamp(36px, 5vw, 56px) 0;
-  border-top: 4px solid var(--c);
-}
-.kampung article[data-s="sapen"] { --c: var(--sapen); }
-.kampung article[data-s="purbonegaran"] { --c: var(--purbonegaran); }
-.kampung article[data-s="resonegaran"] { --c: var(--resonegaran); }
-.kampung h3 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 800; letter-spacing: -0.04em; color: var(--c); line-height: .95; }
-.kampung .theme { margin-top: 14px; font-size: 1.2rem; font-weight: 700; }
-.kampung .where { color: var(--muted); margin-top: 2px; }
-.kampung .lead { font-size: 1.08rem; }
-.focus { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 22px 0 0; padding: 0; }
-.focus li { padding: 6px 12px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: .92rem; font-weight: 500; }
-.kampung .to-programs {
-  margin-top: 26px; background: var(--c); color: #fff;
-}
-.kampung .to-programs:hover { filter: brightness(1.1); }
-
-/* ---------------- Program explorer ---------------- */
-.toolbar { display: grid; gap: 14px; margin-bottom: 28px; }
-.filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.filter-row > span { font-size: .9rem; color: var(--muted); margin-right: 6px; min-width: 4.5rem; }
-.chip {
-  font: inherit; font-size: .95rem; font-weight: 600;
-  padding: 8px 14px; border-radius: 999px; cursor: pointer;
-  border: 1.5px solid var(--line); background: #fff; color: var(--ink);
-}
-.chip:hover { border-color: var(--muted); }
-.chip[aria-pressed="true"] { background: var(--sogan); border-color: var(--sogan); color: #FFF8EE; }
-.chip[data-s="sapen"][aria-pressed="true"] { background: var(--sapen); border-color: var(--sapen); }
-.chip[data-s="purbonegaran"][aria-pressed="true"] { background: var(--purbonegaran); border-color: var(--purbonegaran); }
-.chip[data-s="resonegaran"][aria-pressed="true"] { background: var(--resonegaran); border-color: var(--resonegaran); }
-.search { position: relative; max-width: 26rem; }
-.search input {
-  width: 100%; font: inherit; font-size: 1rem;
-  padding: 12px 16px; border-radius: var(--radius-sm); border: 1.5px solid var(--line); background: #fff; color: var(--ink);
-}
-.search input:focus { outline: none; border-color: var(--sogan); box-shadow: 0 0 0 3px rgba(154, 85, 39, .25); }
-.count { color: var(--muted); font-size: .95rem; }
-
-.group { margin-top: 36px; }
-.group:first-child { margin-top: 0; }
-.group-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; padding-bottom: 10px; border-bottom: 2px solid var(--ink); }
-.group-head h3 { font-size: 1.25rem; }
-.group-head small { color: var(--muted); font-size: .92rem; }
-
-.prog { border-bottom: 1px solid var(--line); }
-.prog summary {
-  list-style: none; cursor: pointer;
-  display: grid; grid-template-columns: 6px minmax(0, 1fr) auto; gap: 16px; align-items: start;
-  padding: 16px 4px;
-}
-.prog summary::-webkit-details-marker { display: none; }
-.prog summary:hover .p-title { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-.tick { width: 6px; height: 100%; min-height: 2.6em; border-radius: 3px; background: var(--c, var(--tembaga)); }
-.prog[data-s="sapen"] { --c: var(--sapen); }
-.prog[data-s="purbonegaran"] { --c: var(--purbonegaran); }
-.prog[data-s="resonegaran"] { --c: var(--resonegaran); }
-.p-title { font-weight: 700; font-size: 1.06rem; line-height: 1.35; }
-.p-meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 4px; font-size: .92rem; color: var(--muted); }
-.p-meta b { color: var(--ink); font-weight: 600; }
-.plus { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--line); display: grid; place-items: center; margin-top: 2px; transition: transform .2s ease; }
-.plus::before { content: ""; width: 10px; height: 10px; background:
-  linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
-  linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat; }
-.prog[open] .plus { transform: rotate(45deg); }
-.prog .p-body { padding: 0 4px 20px 26px; max-width: 46rem; }
-.prog .p-body p { color: var(--ink); }
-.prog .p-body .klaster { margin-top: 10px; font-size: .9rem; color: var(--muted); }
-.empty { padding: 32px 0; color: var(--muted); }
-.empty button { font: inherit; color: var(--ink); font-weight: 700; background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
-
-/* ---------------- Linimasa ---------------- */
-.linimasa-section { background: var(--sogan); color: var(--pasir); }
-.linimasa-section .section-head p { color: #D6C1A4; }
-.timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; position: relative; }
-.timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 9px; height: 2px; background: rgba(238, 223, 200, .3); }
-.timeline li { position: relative; padding: 36px 20px 0 0; }
-.timeline li::before { content: ""; position: absolute; top: 2px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--sogan); border: 3px solid var(--pasir); }
-.timeline li:last-child::before { background: var(--pasir); }
-.timeline time { display: block; font-weight: 800; font-size: 1.15rem; color: #FFF8EE; letter-spacing: -0.01em; }
-.timeline h3 { margin-top: 6px; font-size: 1.02rem; font-weight: 700; color: var(--pasir); }
-.timeline p { margin-top: 8px; font-size: .95rem; color: #D6C1A4; }
-.event {
-  margin-top: 56px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px;
-  padding: 20px 24px; border-radius: var(--radius-lg); background: var(--sogan-2);
-}
-.event strong { color: #FFF8EE; }
-.event span { color: #D6C1A4; }
-
-/* ---------------- Tim ---------------- */
-.team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); }
-.team section { --c: var(--tembaga); }
-.team section[data-s="sapen"] { --c: var(--sapen); }
-.team section[data-s="purbonegaran"] { --c: var(--purbonegaran); }
-.team section[data-s="resonegaran"] { --c: var(--resonegaran); }
-.team h3 { color: var(--c); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em; padding-bottom: 12px; border-bottom: 3px solid var(--c); }
-.team ul { list-style: none; margin: 0; padding: 0; }
-.team li { padding: 12px 0; border-bottom: 1px solid var(--line); }
-.team li b { display: block; font-weight: 700; }
-.team li span { font-size: .93rem; color: var(--muted); }
-
-/* ---------------- Kemitraan ---------------- */
-.kemitraan-section { background: var(--pasir-2); }
-.partner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
-.partner h3 { margin-bottom: 16px; }
-.partner ul { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; }
-.partner li::marker { color: var(--tembaga); }
-.partner li b { font-weight: 700; }
-.contact {
-  margin-top: clamp(40px, 6vw, 64px);
-  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px;
-  padding: clamp(24px, 4vw, 40px); border-radius: var(--radius-lg);
-  background: var(--sogan); color: var(--pasir);
-}
-.contact p { font-size: clamp(1.2rem, 2.2vw, 1.55rem); font-weight: 700; letter-spacing: -0.015em; color: #FFF8EE; max-width: 32rem; }
-.contact .links { display: flex; flex-wrap: wrap; gap: 12px; }
-
-/* ---------------- Footer ---------------- */
-footer { background: var(--sogan); color: #D6C1A4; border-top: 1px solid rgba(238, 223, 200, .18); }
-footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding-top: 32px; padding-bottom: 40px; font-size: .95rem; }
-footer .brand { color: var(--pasir); }
-footer em { font-style: italic; }
-
-/* ---------------- Responsive ---------------- */
-@media (max-width: 960px) {
-  .nav ul { display: none; }
-  .hero-body { grid-template-columns: 1fr; }
-  .hero-mark { justify-self: start; width: min(56%, 260px); order: -1; }
-  .sinoman, .partner { grid-template-columns: 1fr; }
-  .kampung article { grid-template-columns: 1fr; }
-  .team { grid-template-columns: 1fr; }
-  .timeline { grid-template-columns: 1fr; }
-  .timeline::before { left: 7px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
-  .timeline li { padding: 0 0 28px 40px; }
-  .timeline li::before { top: 4px; }
-  .contact { grid-template-columns: 1fr; }
-}
-@media (max-width: 560px) {
-  body { font-size: 16px; }
-  .values li { grid-template-columns: 1fr; gap: 2px; }
-  .filter-row > span { width: 100%; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
 
-<header class="hero">
-  <svg class="kawung" aria-hidden="true">
-    <defs>
-      <pattern id="kawung" width="64" height="64" patternUnits="userSpaceOnUse">
-        <g fill="none" stroke="currentColor" stroke-width="1.1">
-          <ellipse cx="16" cy="16" rx="14" ry="7.5" transform="rotate(45 16 16)"/>
-          <ellipse cx="48" cy="16" rx="14" ry="7.5" transform="rotate(-45 48 16)"/>
-          <ellipse cx="16" cy="48" rx="14" ry="7.5" transform="rotate(-45 16 48)"/>
-          <ellipse cx="48" cy="48" rx="14" ry="7.5" transform="rotate(45 48 48)"/>
-          <circle cx="32" cy="32" r="2.2"/>
-          <circle cx="0" cy="0" r="2.2"/><circle cx="64" cy="0" r="2.2"/>
-          <circle cx="0" cy="64" r="2.2"/><circle cx="64" cy="64" r="2.2"/>
-        </g>
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#kawung)"/>
-  </svg>
-
-  <nav class="nav wrap" aria-label="Navigasi utama">
-    <a class="brand" href="#top" id="top"><span class="disc"><img src="assets/logo-mark.png" alt="" width="34" height="21"></span>Sinoman Gondokusuman</a>
-    <ul>
-      <li><a href="#sinoman">Tentang</a></li>
-      <li><a href="#kampung">Kampung</a></li>
-      <li><a href="#program">Program</a></li>
-      <li><a href="#linimasa">Linimasa</a></li>
-      <li><a href="#tim">Tim</a></li>
-      <li><a href="#kemitraan">Kemitraan</a></li>
-    </ul>
-  </nav>
-
-  <div class="hero-body wrap">
-    <div>
-      <h1>Sinoman<span>Gondokusuman</span></h1>
-      <p class="hero-lede">Mahasiswa KKN-PPM UGM yang tinggal dan bekerja bersama warga Sapen, Purbonegaran, dan Resonegaran untuk mengembangkan kampung wisata di Gondokusuman, Yogyakarta.</p>
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="#program">Lihat program kerja</a>
-        <a class="btn btn-ghost" href="#kemitraan">Jadi mitra</a>
-      </div>
-    </div>
-    <div class="hero-mark"><img src="assets/logo-mark.png" alt="Logo Sinoman Gondokusuman" width="892" height="560"></div>
-  </div>
-
-  <div class="hero-foot">
-    <div class="wrap">
-      <span><strong>KKN-PPM UGM Periode 3 2026</strong>, unit YO092</span>
-      <span><strong>19 Oktober – 7 Desember 2026</strong></span>
-      <span><strong>21 mahasiswa</strong> di 3 kampung</span>
-    </div>
+<a class="skip" href="#main">Langsung ke isi</a>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="./" aria-current="page"><span class="disc"><img src="assets/logo-mark.png" alt="" width="32" height="20"></span>Sinoman Gondokusuman</a>
+    <nav class="menu" aria-label="Navigasi utama">
+      <a href="kampung.html">Kampung</a>
+      <a href="program.html">Program</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="kemitraan.html">Kemitraan</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Mode terang">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
+    </button>
   </div>
 </header>
 
-<main>
+<main id="main">
 
-<section class="section" id="sinoman" aria-labelledby="sinoman-title">
-  <div class="wrap sinoman">
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <h1>Sinoman <span>Gondokusuman</span></h1>
+      <p class="lede">Dua puluh satu mahasiswa KKN-PPM UGM tinggal dan bekerja bersama warga Sapen, Purbonegaran, dan Resonegaran untuk mengembangkan kampung wisata di Gondokusuman, Yogyakarta.</p>
+      <div class="actions">
+        <a class="btn" href="program.html">Lihat program kerja</a>
+        <a class="btn btn-line" href="kemitraan.html">Jadi mitra</a>
+      </div>
+      <p class="hero-meta"><span><b>19 Oktober – 7 Desember 2026</b></span><span>KKN-PPM UGM Periode 3, unit YO092</span></p>
+    </div>
+    <ul class="umbul" id="umbul" aria-label="Tiga kampung"></ul>
+  </div>
+</section>
+
+<section class="band band-alt" aria-labelledby="sinoman-title">
+  <div class="wrap duo">
     <div>
       <h2 id="sinoman-title">Kenapa sinoman?</h2>
-      <blockquote style="margin-top: 28px">
-        Dalam hajatan Jawa, <em>sinoman</em> adalah para pemuda dan pemudi yang dengan sukarela membantu melayani tamu dan menyiapkan acara bersama.
-      </blockquote>
-      <p class="note">Nama itu kami pakai sebagai pegangan. Kami datang untuk bekerja bersama warga, bukan sekadar menjalankan program untuk warga. Kolaborasi melibatkan mahasiswa, pengurus kampung, pemerintah setempat, pelaku usaha, komunitas, dan mitra.</p>
+      <p class="quote">Dalam hajatan Jawa, sinoman adalah para pemuda dan pemudi yang dengan sukarela membantu melayani tamu dan menyiapkan acara bersama.</p>
+      <p>Nama itu kami pakai sebagai pegangan: datang untuk bekerja bersama warga, bukan sekadar menjalankan program untuk warga.</p>
+      <a class="more" href="tentang.html">Tentang kami dan tim</a>
     </div>
-    <ul class="values" aria-label="Nilai yang kami pegang">
-      <li><b>Gotong royong</b><span>Membagi peran antara mahasiswa, masyarakat, dan mitra.</span></li>
-      <li><b>Partisipasi</b><span>Warga ikut menentukan kebutuhan, rencana, dan pelaksanaan kegiatan.</span></li>
-      <li><b>Pelestarian</b><span>Menjaga budaya, sejarah, lingkungan, dan pengetahuan lokal.</span></li>
-      <li><b>Keberlanjutan</b><span>Luaran yang bisa dilanjutkan warga setelah KKN selesai.</span></li>
-    </ul>
+    <aside class="now" id="now" aria-label="Linimasa"></aside>
   </div>
 </section>
 
-<section class="section kampung-section" id="kampung" aria-labelledby="kampung-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="kampung-title">Tiga kampung, tiga karakter</h2>
-      <p>Setiap kampung punya potensi berbeda yang saling melengkapi: lingkungan, budaya, serta sejarah dan kerajinan.</p>
+<section class="band" aria-labelledby="invite-title">
+  <div class="wrap invite-in">
+    <div>
+      <h2 id="invite-title">Mau ikut mendukung?</h2>
+      <p>Kami membuka kolaborasi berupa dana, perlengkapan, narasumber, tempat, atau publikasi, untuk pariwisata berbasis komunitas di tiga kampung ini.</p>
     </div>
-    <div class="kampung" id="kampung-list"></div>
-  </div>
-</section>
-
-<section class="section" id="program" aria-labelledby="program-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="program-title">Program kerja</h2>
-      <p>Setiap mahasiswa menjalankan beberapa program untuk anak-anak, remaja, lansia, kader, pelaku UMKM, pengrajin, dan pengunjung. Pilih kampung atau klaster, atau cari dengan kata kunci.</p>
-    </div>
-
-    <div class="toolbar">
-      <div class="filter-row" role="group" aria-label="Pilih kampung">
-        <span>Kampung</span>
-        <button class="chip" data-filter="s" data-value="all" aria-pressed="true">Semua</button>
-        <button class="chip" data-filter="s" data-value="sapen" data-s="sapen" aria-pressed="false">Sapen</button>
-        <button class="chip" data-filter="s" data-value="purbonegaran" data-s="purbonegaran" aria-pressed="false">Purbonegaran</button>
-        <button class="chip" data-filter="s" data-value="resonegaran" data-s="resonegaran" aria-pressed="false">Resonegaran</button>
-      </div>
-      <div class="filter-row" role="group" aria-label="Pilih klaster">
-        <span>Klaster</span>
-        <button class="chip" data-filter="k" data-value="all" aria-pressed="true">Semua</button>
-        <button class="chip" data-filter="k" data-value="Medika" aria-pressed="false">Medika</button>
-        <button class="chip" data-filter="k" data-value="Saintek" aria-pressed="false">Saintek</button>
-        <button class="chip" data-filter="k" data-value="Soshum" aria-pressed="false">Soshum</button>
-      </div>
-      <label class="search">
-        <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Cari program</span>
-        <input type="search" id="q" placeholder="Cari: batik, lansia, sampah, AI…" autocomplete="off">
-      </label>
-      <p class="count" id="count" aria-live="polite"></p>
-    </div>
-
-    <div id="programs"></div>
-  </div>
-</section>
-
-<section class="section linimasa-section" id="linimasa" aria-labelledby="linimasa-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="linimasa-title">Tujuh minggu di kampung</h2>
-      <p>Kerangka umum untuk seluruh unit. Jadwal rinci tiap subunit menyesuaikan kesepakatan dengan warga dan mitra.</p>
-    </div>
-    <ol class="timeline" id="timeline"></ol>
-    <p class="event"><strong>25 Oktober 2026</strong><span>Upacara adat Merti Kali Belik di Purbonegaran: kenduri dan kirab budaya.</span></p>
-  </div>
-</section>
-
-<section class="section" id="tim" aria-labelledby="tim-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="tim-title">Tim</h2>
-      <p>Mahasiswa dari klaster Medika, Saintek, dan Soshum, dibagi ke tiga subunit.</p>
-    </div>
-    <div class="team" id="team"></div>
-  </div>
-</section>
-
-<section class="section kemitraan-section" id="kemitraan" aria-labelledby="kemitraan-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="kemitraan-title">Bermitra dengan kami</h2>
-      <p>Kami membuka kolaborasi dengan siapa pun yang peduli pada pariwisata berbasis komunitas, pelestarian budaya, pendidikan, lingkungan, dan ekonomi lokal.</p>
-    </div>
-    <div class="partner">
-      <div>
-        <h3>Bentuk dukungan</h3>
-        <ul>
-          <li><b>Pendanaan</b> untuk kebutuhan kegiatan yang disepakati bersama.</li>
-          <li><b>Barang dan perlengkapan</b>, misalnya bahan dan alat workshop.</li>
-          <li><b>Keahlian dan narasumber</b> dari praktisi atau fasilitator.</li>
-          <li><b>Fasilitas</b> berupa tempat atau sarana kegiatan.</li>
-          <li><b>Kolaborasi program</b> yang sejalan dengan bidang mitra.</li>
-          <li><b>Publikasi dan jejaring</b> untuk memperkenalkan potensi kampung.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Yang mitra dapatkan</h3>
-        <ul>
-          <li>Nama dan logo mitra di media publikasi kegiatan.</li>
-          <li>Penyebutan dan penandaan akun mitra di media sosial.</li>
-          <li>Penyebutan mitra dalam acara terkait.</li>
-          <li>Laporan pelaksanaan dan dokumentasi kegiatan.</li>
-          <li>Kesempatan terlibat langsung dalam program yang relevan.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="contact">
-      <p>Bentuk kerja sama bisa disesuaikan dengan kapasitas mitra. Mari bicarakan.</p>
-      <div class="links">
-        <a class="btn btn-solid" href="https://www.instagram.com/sinoman.gondokusuman/" rel="noopener">Instagram @sinoman.gondokusuman</a>
-        <a class="btn btn-ghost" href="mailto:sinoman.gondokusuman@gmail.com">Kirim email</a>
-      </div>
-    </div>
+    <a class="btn" href="kemitraan.html">Lihat bentuk kemitraan</a>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <a class="brand" href="#top"><span class="disc"><img src="assets/logo-mark.png" alt="" width="34" height="21"></span>Sinoman Gondokusuman</a>
-    <span><em>Bersama, bergotong royong, dan bertumbuh bersama masyarakat.</em></span>
-    <span>KKN-PPM Universitas Gadjah Mada, 2026</span>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="foot-tag">Bersama, bergotong royong, dan bertumbuh bersama masyarakat.</p>
+    <ul class="foot-links">
+      <li><a href="https://www.instagram.com/sinoman.gondokusuman/" rel="noopener">Instagram @sinoman.gondokusuman</a></li>
+      <li><a href="mailto:sinoman.gondokusuman@gmail.com">sinoman.gondokusuman@gmail.com</a></li>
+    </ul>
+    <p class="foot-small">KKN-PPM Universitas Gadjah Mada Periode 3 2026, unit YO092</p>
   </div>
 </footer>
 
 <script src="data.js"></script>
-<script>
-(() => {
-  const order = ["sapen", "purbonegaran", "resonegaran"];
-  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const countFor = (s) => PROGRAMS.filter((p) => p.s === s).length;
-
-  // Kampung
-  document.getElementById("kampung-list").innerHTML = order.map((s) => {
-    const u = SUBUNITS[s];
-    return `<article data-s="${s}">
-      <div>
-        <h3>${u.name}</h3>
-        <p class="theme">${u.theme}</p>
-        <p class="where">${u.kelurahan}</p>
-      </div>
-      <div>
-        <p class="lead">${u.lead}</p>
-        <ul class="focus">${u.focus.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
-        <a class="btn to-programs" href="#program" data-goto="${s}">Lihat ${countFor(s)} program di ${u.name}</a>
-      </div>
-    </article>`;
-  }).join("");
-
-  // Program explorer
-  const state = { s: "all", k: "all", q: "" };
-  const list = document.getElementById("programs");
-  const count = document.getElementById("count");
-  const q = document.getElementById("q");
-
-  const matches = (p) => {
-    if (state.s !== "all" && p.s !== state.s) return false;
-    if (state.k !== "all" && p.k !== state.k) return false;
-    if (state.q) {
-      const hay = [p.title, p.d, p.p, p.t, p.g, p.k, SUBUNITS[p.s].name].join(" ").toLowerCase();
-      return state.q.split(/\s+/).every((w) => hay.includes(w));
-    }
-    return true;
-  };
-
-  function render() {
-    const rows = PROGRAMS.filter(matches);
-    count.textContent = rows.length === PROGRAMS.length
-      ? `Menampilkan semua ${rows.length} program.`
-      : `Menampilkan ${rows.length} dari ${PROGRAMS.length} program.`;
-
-    if (!rows.length) {
-      list.innerHTML = `<p class="empty">Tidak ada program yang cocok. Coba kata kunci lain atau <button type="button" id="reset">tampilkan semua program</button>.</p>`;
-      document.getElementById("reset").addEventListener("click", reset);
-      return;
-    }
-
-    // Kelompokkan per kampung, lalu per payung program (Resonegaran) atau per orang.
-    const groups = [];
-    for (const s of order) {
-      const inS = rows.filter((p) => p.s === s);
-      const keys = [...new Set(inS.map((p) => p.g || p.p))];
-      for (const key of keys) {
-        const items = inS.filter((p) => (p.g || p.p) === key);
-        groups.push({ s, key, items, byPerson: !items[0].g });
-      }
-    }
-
-    list.innerHTML = groups.map(({ s, key, items, byPerson }) => `
-      <div class="group">
-        <div class="group-head">
-          <h3>${esc(byPerson ? `Program ${key}` : key)}</h3>
-          <small>${SUBUNITS[s].name}${byPerson ? "" : `, ${items.length} sesi`}</small>
-        </div>
-        ${items.map((p) => `
-          <details class="prog" data-s="${p.s}">
-            <summary>
-              <span class="tick" aria-hidden="true"></span>
-              <span>
-                <span class="p-title">${esc(p.title)}</span>
-                <span class="p-meta"><span>Untuk <b>${esc(p.t)}</b></span>${byPerson ? "" : `<span>Oleh <b>${esc(p.p)}</b></span>`}</span>
-              </span>
-              <span class="plus" aria-hidden="true"></span>
-            </summary>
-            <div class="p-body">
-              <p>${esc(p.d)}</p>
-              <p class="klaster">Klaster ${esc(p.k)}</p>
-            </div>
-          </details>`).join("")}
-      </div>`).join("");
-  }
-
-  function setFilter(kind, value) {
-    state[kind] = value;
-    document.querySelectorAll(`.chip[data-filter="${kind}"]`).forEach((b) =>
-      b.setAttribute("aria-pressed", String(b.dataset.value === value)));
-    render();
-  }
-
-  function reset() {
-    q.value = ""; state.q = "";
-    setFilter("k", "all");
-    setFilter("s", "all");
-  }
-
-  document.querySelectorAll(".chip").forEach((b) =>
-    b.addEventListener("click", () => setFilter(b.dataset.filter, b.dataset.value)));
-  q.addEventListener("input", () => { state.q = q.value.trim().toLowerCase(); render(); });
-  document.querySelectorAll("[data-goto]").forEach((a) =>
-    a.addEventListener("click", () => { setFilter("k", "all"); setFilter("s", a.dataset.goto); }));
-
-  render();
-
-  // Linimasa
-  document.getElementById("timeline").innerHTML = TIMELINE.map((t) =>
-    `<li><time>${t.date}</time><h3>${t.title}</h3><p>${t.text}</p></li>`).join("");
-
-  // Tim
-  document.getElementById("team").innerHTML = order.map((s) => `
-    <section data-s="${s}" aria-label="Tim ${SUBUNITS[s].name}">
-      <h3>${SUBUNITS[s].name}</h3>
-      <ul>${TEAM[s].map((m) => `<li><b>${esc(m.name)}</b><span>${esc(m.prodi)}${m.role ? `, ${esc(m.role)}` : ""}</span></li>`).join("")}</ul>
-    </section>`).join("");
-})();
-</script>
+<script src="app.js"></script>
 </body>
 </html>

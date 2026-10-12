@@ -164,11 +164,17 @@ const PROGRAMS = [
   { s: "sapen", k: "Soshum", p: "Sina", t: "Warga", title: "Hukum dan Kampanye Pengelolaan Sampah Rumah Tangga", d: "Tanggung jawab warga dalam pengelolaan sampah, diskusi kasus, dan simulasi pemilahan." },
 ];
 
+// from/to (YYYY-MM-DD) menentukan fase yang sedang berjalan; date adalah labelnya.
 const TIMELINE = [
-  { date: "19–25 Okt", title: "Persiapan dan koordinasi", text: "Penerjunan, perkenalan dengan pengurus kampung, observasi awal, dan memastikan jadwal." },
-  { date: "26 Okt–1 Nov", title: "Pemetaan dan pematangan rencana", text: "Pendalaman potensi lokal dan komunikasi dengan calon mitra. Kelas untuk pelajar di Resonegaran dimulai." },
-  { date: "2–15 Nov", title: "Pelaksanaan tahap I", text: "Program prioritas tiap subunit berjalan, termasuk sosialisasi digitalisasi kampung." },
-  { date: "16–29 Nov", title: "Pelaksanaan tahap II", text: "Workshop wisata dan batik, kolaborasi dengan mitra, dan Pameran Resonegaran." },
-  { date: "30 Nov–6 Des", title: "Evaluasi dan penyelesaian luaran", text: "Menyempurnakan luaran, merapikan dokumentasi, dan menyepakati tindak lanjut bersama warga." },
-  { date: "7 Des", title: "Penutupan dan serah terima", text: "Penyampaian hasil dan penyerahan luaran kepada masyarakat." },
+  { date: "19–25 Okt", from: "2026-10-19", to: "2026-10-25", title: "Persiapan dan koordinasi", text: "Penerjunan, perkenalan dengan pengurus kampung, observasi awal, dan memastikan jadwal." },
+  { date: "26 Okt–1 Nov", from: "2026-10-26", to: "2026-11-01", title: "Pemetaan dan pematangan rencana", text: "Pendalaman potensi lokal dan komunikasi dengan calon mitra. Kelas untuk pelajar di Resonegaran dimulai." },
+  { date: "2–15 Nov", from: "2026-11-02", to: "2026-11-15", title: "Pelaksanaan tahap I", text: "Program prioritas tiap subunit berjalan, termasuk sosialisasi digitalisasi kampung." },
+  { date: "16–29 Nov", from: "2026-11-16", to: "2026-11-29", title: "Pelaksanaan tahap II", text: "Workshop wisata dan batik, kolaborasi dengan mitra, dan Pameran Resonegaran." },
+  { date: "30 Nov–6 Des", from: "2026-11-30", to: "2026-12-06", title: "Evaluasi dan penyelesaian luaran", text: "Menyempurnakan luaran, merapikan dokumentasi, dan menyepakati tindak lanjut bersama warga." },
+  { date: "7 Des", from: "2026-12-07", to: "2026-12-07", title: "Penutupan dan serah terima", text: "Penyampaian hasil dan penyerahan luaran kepada masyarakat." },
+];
+
+// Acara bertanggal yang ditampilkan di beranda dan linimasa.
+const EVENTS = [
+  { date: "2026-10-25", s: "purbonegaran", title: "Merti Kali Belik", text: "Upacara adat di Purbonegaran: kenduri dan kirab budaya." },
 ];

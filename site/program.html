@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Program kerja | Sinoman Gondokusuman</title>
+<meta name="description" content="Semua program kerja KKN-PPM UGM Sinoman Gondokusuman di Sapen, Purbonegaran, dan Resonegaran, bisa disaring per kampung dan klaster.">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="program">
+
+<a class="skip" href="#main">Langsung ke isi</a>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="./"><span class="disc"><img src="assets/logo-mark.png" alt="" width="32" height="20"></span>Sinoman Gondokusuman</a>
+    <nav class="menu" aria-label="Navigasi utama">
+      <a href="kampung.html">Kampung</a>
+      <a href="program.html" aria-current="page">Program</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="kemitraan.html">Kemitraan</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Mode terang">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="wrap page-head">
+  <h1>Program kerja</h1>
+  <p>Kelas, pelatihan, pendampingan, dan karya untuk anak-anak, remaja, lansia, kader, pelaku UMKM, pengrajin, dan pengunjung. Pilih kampung atau klaster, atau cari dengan kata kunci.</p>
+</div>
+
+<div class="wrap explorer">
+  <div class="filters">
+    <label class="search">
+      <span class="filter-label">Cari</span>
+      <input type="search" id="q" placeholder="batik, lansia, sampah, AI…" autocomplete="off">
+    </label>
+    <div>
+      <span class="filter-label" id="f-kampung-label">Kampung</span>
+      <div class="opts" id="f-kampung" role="group" aria-labelledby="f-kampung-label"></div>
+    </div>
+    <div>
+      <span class="filter-label" id="f-klaster-label">Klaster</span>
+      <div class="opts" id="f-klaster" role="group" aria-labelledby="f-klaster-label"></div>
+    </div>
+  </div>
+  <div class="results">
+    <p class="count" id="count" aria-live="polite"></p>
+    <div id="programs"></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="foot-tag">Bersama, bergotong royong, dan bertumbuh bersama masyarakat.</p>
+    <ul class="foot-links">
+      <li><a href="https://www.instagram.com/sinoman.gondokusuman/" rel="noopener">Instagram @sinoman.gondokusuman</a></li>
+      <li><a href="mailto:sinoman.gondokusuman@gmail.com">sinoman.gondokusuman@gmail.com</a></li>
+    </ul>
+    <p class="foot-small">KKN-PPM Universitas Gadjah Mada Periode 3 2026, unit YO092</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
